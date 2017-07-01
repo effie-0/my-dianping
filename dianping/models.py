@@ -18,7 +18,7 @@ class Business(models.Model):
     avg_price = models.IntegerField()
     review_count = models.IntegerField()
     hours = models.CharField(max_length=100)
-    popular_dishes = []  #todo
+    popular_dishes = models.ManyToManyField('Dish')
     #photo_url, s_photo_url, photo_count, photo_list_url
     has_takeaway = models.BooleanField()
     has_online_reservation = models.BooleanField()
@@ -63,3 +63,7 @@ class Message(models.Model):
 
     def __str__(self):
         return self.title
+
+class Dish(models.Model):
+    name = models.CharField(max_length=20)
+    business = models.ManyToManyField('Business')

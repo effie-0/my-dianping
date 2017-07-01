@@ -6,10 +6,9 @@
             {% csrf_token %}
             <div class = "form-group">
                 <select>
-                    <option value = "1">--</option>
-                    <option value = "2">菜系</option>
-                    <option value = "3">商圈</option>
-                    <option value = "4">评分</option>
+                    <option value = "1">店名</option>
+                    <option value = "2">推荐菜</option>
+                    <option value = "3">地址</option>
                 </select>
                 <input type = "text" id = "myrequest" name = "myrequest" class = "form-control" placeholder = "MyRequest" required/>
             </div>
@@ -32,6 +31,9 @@
     </div>
     <hr/>
     <br/>
+    <h2>热门导航</h2>
+
+
 
 
 {% endblock %}
