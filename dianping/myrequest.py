@@ -1,13 +1,14 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
+from .models import Business, Review
 
 def search(request):
     #todo
-    return redirect('display')
+    return render(request, 'display.html', {})
 
 
 
 
 def review_search(request):
     # todo
-    return redirect('display_review')
+    return render(request, 'display_review.html', {})
 

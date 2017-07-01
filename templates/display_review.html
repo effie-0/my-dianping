@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    {% for review in reviews %}
+        <h4>
+            店铺：{{ review.business.name }}<br/>
+            用户名: {{ review.author }}<br/>
+            评分：{{ review.grade }}
+        </h4>
+        <div>
+        {{ review.excertpt }}
+        </div>
+        <hr/>
+    {% endfor %}
+{% endblock %}
