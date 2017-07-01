@@ -38,12 +38,13 @@ class Review(models.Model):
     author = models.CharField(max_length=20)
     created_at = models.DateTimeField(default=timezone.now)
     excertpt = models.CharField(max_length=50)
+    content = models.TextField()
     grade = models.FloatField()
 
     def __str__(self):
         return self.excertpt
 
-class Request(models.Model):
+class MyRequest(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=6)
     longtitude = models.DecimalField(max_digits=10, decimal_places=6)
     radius = models.IntegerField()

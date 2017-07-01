@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>小众点评</title>
+    {% load static %}
+    <link href = "{% static 'bootstrap/css/bootstrap.min.css' %}" rel = "stylesheet">
 </head>
 <body>
-
+    <div class = "container">
+        <div class = "header clearfix">
+            <h3 class = "text-muted">小众点评</h3>
+        </div>
+        <section id = "content">
+            {% block content %}
+            {% endblock %}
+        </section>
+        <footer class = "footer">
+            <p>&copy; 2017 小众点评</p>
+        </footer>
+    </div>
 </body>
 </html>
