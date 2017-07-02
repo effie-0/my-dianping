@@ -4,25 +4,28 @@ from django.utils import timezone
 # Create your models here.
 class Business(models.Model):
     name = models.CharField(max_length=50)
-    branch_name = models.CharField(max_length=50)
-    address = models.CharField(max_length=200)
-    telephone = models.CharField(max_length=20)
-    region = models.CharField(max_length=10)
-    category = models.CharField(max_length=10)
-    latitude = models.DecimalField(max_digits=10, decimal_places=6)
-    longtitude = models.DecimalField(max_digits=10, decimal_places=6)
-    avg_rating = models.FloatField()
-    product_grade = models.FloatField()
-    decoration_grade = models.FloatField()
-    service_grade = models.FloatField()
-    avg_price = models.IntegerField()
-    review_count = models.IntegerField()
-    hours = models.CharField(max_length=100)
-    popular_dishes = models.ManyToManyField('Dish')
+    branch_name = models.CharField(max_length=50,default = '')
+    address = models.CharField(max_length=200,default = '')
+    telephone = models.CharField(max_length=20,default = '')
+    region = models.CharField(max_length=10,default = '')
+    category = models.CharField(max_length=10,default = '')
+    latitude = models.DecimalField(max_digits=10, decimal_places=6,default = 0)
+    longtitude = models.DecimalField(max_digits=10, decimal_places=6,default = 0)
+    avg_rating = models.FloatField(default = 3)
+    product_grade = models.FloatField(default = 3)
+    decoration_grade = models.FloatField(default = 3)
+    service_grade = models.FloatField(default = 3)
+    avg_price = models.IntegerField(default = 0)
+    review_count = models.IntegerField(default = 0)
+    hours = models.CharField(max_length=100,default = '')
+    popular_dishes = models.CharField(max_length=100,default = '')
     #photo_url, s_photo_url, photo_count, photo_list_url
-    has_takeaway = models.BooleanField()
-    has_online_reservation = models.BooleanField()
-    recommend_text = models.CharField(max_length=200)
+    has_takeaway = models.BooleanField(default = False)
+    has_online_reservation = models.BooleanField(default = False)
+    recommend_text = models.CharField(max_length=200,default = '')
+
+    def __str__(self):
+        return self.name
 
 class User(models.Model):
     name = models.CharField(max_length=20)
@@ -38,7 +41,7 @@ class Review(models.Model):
     author = models.CharField(max_length=20)
     created_at = models.DateTimeField(default=timezone.now)
     excertpt = models.CharField(max_length=50)
-    content = models.TextField()
+    content = models.TextField(default = '')
     grade = models.FloatField()
 
     def __str__(self):
@@ -63,7 +66,3 @@ class Message(models.Model):
 
     def __str__(self):
         return self.title
-
-class Dish(models.Model):
-    name = models.CharField(max_length=20)
-    business = models.ManyToManyField('Business')

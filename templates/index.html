@@ -5,12 +5,12 @@
         <form method = "post" action = "{% url 'search'%}">
             {% csrf_token %}
             <div class = "form-group">
-                <select>
+                <select ud = "search_method" name = "search_method">
                     <option value = "1">店名</option>
                     <option value = "2">推荐菜</option>
                     <option value = "3">地址</option>
                 </select>
-                <input type = "text" id = "myrequest" name = "myrequest" class = "form-control" placeholder = "MyRequest" required/>
+                <input type = "text" id = "request_content" name = "request_content" class = "form-control" placeholder = "MyRequest" required/>
             </div>
             <button type = "submit" class = "btn btn-primary">搜索</button>
         </form>
