@@ -2,7 +2,7 @@
 {% block content %}
     {% for business in businesses %}
     <h4>{{ business.name }}</h4>
-        <h5>{{ business.avg_rating }} {{ review_count }}条点评 | 人均 ¥ {{ avg_price }}</h5>
+        <h5>{{ business.avg_rating }} {{ review_count }}条点评&nbsp;|&nasp;人均&nbsp;¥&nbsp;{{ avg_price }}</h5>
         <div>
         {{ business.category }} | {{ business.region }} {{ business.address }}
         </div>

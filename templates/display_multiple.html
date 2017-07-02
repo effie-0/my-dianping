@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<head>
+    <h1>Title</h1>
+</head>
+<body>
+<script type = "text/javascript">
+    function show()
+    {
+        var trying = document.getElementsByName("trying");
+        var div = document.createElement("div");
+        var myinput = document.createElement("input");
+        myinput.type = "radio";
+
+        var mylabel = document.createElement("label");
+        mylabel.appendChild(myinput);
+        mylabel.innerHTML = parseInt(10) + "&nbsp;";
+        div.appendChild(myinput);
+
+        trying[0].appendChild(div);
+    }
+</script>
+
+<div><input type = "button" onclick = "show()" value = "adding"></div>
+    <div name ="trying">
+    </div>
+</body>
+</html>

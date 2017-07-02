@@ -20,3 +20,7 @@ def review_search(request):
     # todo
     return render(request, 'display_review.html', {})
 
+def multi_search(request):
+    #todo
+    return render(request, 'display_multiple.html', {})
+
