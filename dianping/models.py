@@ -19,10 +19,11 @@ class Business(models.Model):
     review_count = models.IntegerField(default = 0)
     hours = models.CharField(max_length=100,default = '')
     popular_dishes = models.CharField(max_length=100,default = '')
-    #photo_url, s_photo_url, photo_count, photo_list_url
+    #s_photo_url, photo_count, photo_list_url
     has_takeaway = models.BooleanField(default = False)
     has_online_reservation = models.BooleanField(default = False)
     recommend_text = models.CharField(max_length=200,default = '')
+    photo_url = models.CharField(max_length = 200, default='')
 
     def __str__(self):
         return self.name

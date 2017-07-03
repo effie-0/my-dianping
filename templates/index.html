@@ -81,18 +81,23 @@
     <div>
         <form method = "post" action = "{% url 'multi_search' %}">
             {% csrf_token %}
-            <h3>美食分类</h3>
-            {% for dish_style in dish_styles %}
-            <label><input name = "dish_style" type = "radio" value = "{{ dish_style }}"/>{{ dish_style }}&nbsp;</label>
-            {% endfor %}
-            <h3>地区</h3>
-            {% for region in regions %}
-            <label><input name = "region" type = "radio" onclick = "show_subregions()"value = "{{ region }}"/>
-                {{ region }}&nbsp;</label>
-            {% endfor %}
-
-            <div name = "insertion"></div>
+            <div class = "form-group">
+                <h3>美食分类</h3>
+                {% for dish_style in dish_styles %}
+                <label><input name = "dish_style" type = "radio" value = "{{ dish_style }}"/>{{ dish_style }}&nbsp;</label>
+                {% endfor %}
+            </div>
+            <div class = "form-group">
+                <h3>地区</h3>
+                {% for region in regions %}
+                <label><input name = "region" type = "radio" onclick = "show_subregions()"value = "{{ region }}"/>
+                    {{ region }}&nbsp;</label>
+                {% endfor %}
+            </div>
+            <div class = "form-group">
+                <div name = "insertion"></div>
+            </div>
+        <button type = "submit" class = "btn btn-primary">搜索</button>
         </form>
     </div>
-
 {% endblock %}

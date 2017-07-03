@@ -22,5 +22,5 @@ def review_search(request):
 
 def multi_search(request):
     #todo
-    return render(request, 'display_multiple.html', {})
+    return render(request, 'display.html', {})
 
