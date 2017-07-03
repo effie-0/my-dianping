@@ -40,13 +40,16 @@ class User(models.Model):
         return self.name
 
 class Review(models.Model):
-    bussiness = models.ForeignKey('Business')
-    author = models.CharField(max_length=20)
+    business = models.ForeignKey('Business')
+    author = models.CharField(max_length=20, default='')
+    author_id = models.CharField(max_length=15, default='')
+    price = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
-    excertpt = models.CharField(max_length=50)
-    content = models.TextField(default = '')
-    grade = models.FloatField()
+    excertpt = models.CharField(max_length=50, default='')
+    content = models.TextField(default='')
+    grade = models.FloatField(default=-1)
     review_id = models.CharField(max_length=15, default='')
+    photo_url = models.CharField(max_length=200, default='')
 
     def __str__(self):
         return self.excertpt
