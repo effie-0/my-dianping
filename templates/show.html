@@ -8,6 +8,7 @@
         {% ifnotequal business.category "" %}
             {{ business.category }}&nbsp;>&nbsp;
         {% endifnotequal %}
+        {{ business.name }}
     </h5>
     <h1>{{ business.name }}</h1>
     <p>
@@ -52,6 +53,23 @@
     </div>
     </div>
     <hr/>
+    <div>
+    <form method = "post" action = "{% url 'multi_search' %}">
+        {% csrf_token %}
+        {% ifnotequal business.category "" %}
+        <div class = "form-group">
+                <p name = "dish_style" value = "{{ business.category }}">美食分类: {{ business.category }}</p>
+        </div>
+        {% endifnotequal %}
+
+        {% ifnotequal business.region "" %}
+        <div class = "form-group">
+                <p name = "region" value = "{{ business.region }}">商圈: {{ business.region }}</p>
+        </div>
+        {% endifnotequal %}
+    <button type = "submit" class = "btn btn-primary">店铺推荐</button>
+    </form>
+    </div>
     <div>
     <h2>网友评论</h2>
     {% for review in reviews %}
