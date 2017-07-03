@@ -13,7 +13,7 @@ def search(request):
 	    else:
 	    	business_list = Business.objects.filter(address__contains = content)
 
-    return render(request, 'display.html', {'businesses':business_list})
+    return render(request, 'display.html', {'businesses':business_list, })
 
 
 def review_search(request):
@@ -24,3 +24,14 @@ def multi_search(request):
     #todo
     return render(request, 'display.html', {})
 
+def accurate(request):
+    if request.method == "POST":
+        my_business = request.POST.get('business')
+        my_reviews = business_review(my_business.shop_id)
+        return render(request, 'show.html',
+                      {'business': my_business, 'reviews' : my_reviews, })
+
+def business_review(request_id):
+    #todo
+    reviews = []
+    return reviews

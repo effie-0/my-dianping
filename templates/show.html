@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% block content %}
+    <div>
+    <h5>北京餐厅&nbsp;>&nbsp;
+        {% ifnotequal business.region "" %}
+            {{ business.region }}&nbsp;>&nbsp;
+        {% endifnotequal %}
+        {% ifnotequal business.category "" %}
+            {{ business.category }}&nbsp;>&nbsp;
+        {% endifnotequal %}
+    </h5>
+    <h1>{{ business.name }}</h1>
+    <p>
+        {% ifnotequal business.star 0 %}
+            星级：{{ business.star }}&nbsp;&nbsp;
+        {% endifnotequal %}
+
+        {% ifnotequal business.review_count 0 %}
+            {{ business.review_count }}条评论&nbsp;&nbsp;&nbsp;&nbsp;
+        {% endifnotequal %}
+
+        {% ifnotequal business.avg_price 0 %}
+            人均：{{ business.avg_price }}元&nbsp;&nbsp;|&nbsp;&nbsp;
+        {% endifnotequal %}
+
+        评分：{{ business.avg_rating }}&nbsp;&nbsp;|&nbsp;&nbsp;
+
+        {% ifnotequal business.product_grade 0 %}
+            口味：{{ businss.product_grade }}&nbsp;&nbsp;|&nbsp;&nbsp;
+        {% endifnotequal %}
+
+        {% ifnotequal business.decoration_grade 0 %}
+            环境：{{ business.decoration_grade }}&nbsp;&nbsp;|&nbsp;&nbsp;
+        {% endifnotequal %}
+
+        {% ifnotequal business.service_grade 0 %}
+            服务：{{ business.service_grade }}
+        {% endifnotequal %}
+    </p>
+    <div>
+        {% ifnotequal business.photo_url "" %}
+            <img src = "{{ business.photo_url }}" width = 200 height = 200/>
+        {% endifnotequal %}
+
+        {% ifnotequal business.address "" %}
+            地址：{{ business.address }}<br/>
+        {% endifnotequal %}
+
+        {% ifnotequal business.telephone "" %}
+            电话：{{ business.telephone }}<br/>
+        {% endifnotequal %}
+    </div>
+    </div>
+    <hr/>
+    <div>
+    <h2>网友评论</h2>
+    {% for review in reviews %}
+        <div>
+        <a onclick = "showmore({{ review }})">
+        <h4>
+            店铺：{{ review.business.name }}<br/>
+            用户名: {{ review.author }}<br/>
+            评分：{{ review.grade }}
+        </h4>
+        <div flag = 0 name = {{ review.review_id }}>
+        {{ review.excertpt }}
+        </div>
+        </a>
+        </div>
+        <hr/>
+    {% endfor %}
+    </div>
+{% endblock %}

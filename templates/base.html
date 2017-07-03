@@ -4,6 +4,38 @@
     <title>小众点评</title>
     {% load static %}
     <link href = "{% static 'bootstrap/css/bootstrap.min.css' %}" rel = "stylesheet">
+    <script type = "text/javascript">
+    function showmore(review)
+    {
+        var str = review.review_id;
+        var div = document.getElementsByName(str);
+        if(div[0].flag == 0)
+        {
+            div[0].innerHTML = review.content;
+            div[0].flag = 1;
+        }
+        else
+        {
+            div[0].innerHTML = review.excertpt;
+            div[0].flag = 0;
+        }
+    }
+
+    function show_accurate(business)
+    {
+        var post_data = {"business":business};
+
+        $.ajax({
+            url: {% url 'accurate' %},
+            type: "POST",
+            data: post_data,
+            success:function(data)
+            {
+                data = JSON.parse(data);
+            }
+        })
+    }
+    </script>
 </head>
 <body>
     <div class = "container">

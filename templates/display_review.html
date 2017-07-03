@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for review in reviews %}
+        <div>
+        <a onclick = "showmore({{ review }}">
         <h4>
             店铺：{{ review.business.name }}<br/>
             用户名: {{ review.author }}<br/>
             评分：{{ review.grade }}
         </h4>
-        <div>
+        <div flag = 0 name = {{ review.review_id }}>
         {{ review.excertpt }}
+        </div>
+        </a>
         </div>
         <hr/>
     {% endfor %}
