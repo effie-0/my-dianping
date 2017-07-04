@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'my_dianping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dianping',
+        'NAME': 'test',
         'USER': 'root',
         'PASSWORD': 'Haohaodushu',# the password of effie's mysql
     }

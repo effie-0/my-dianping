@@ -2,14 +2,15 @@
 {% block content %}
     {% for business in businesses %}
         <div>
-        <a onclick = "show_accurate({{ business }})">
+        <a href = "{% url 'accurate' business.shop_id %}">
+        <div>
             {% ifnotequal business.photo_url "" %}
             <img src = "{{ business.photo_url }}" width = 100 height = 100/>
             {% endifnotequal %}
 
             <h4>{{ business.name }}</h4>
             <h5>
-                {% ifnotequal business.avg_rating 0 %}
+                {% ifnotequal business.avg_rating -1 %}
                 评分：{{ business.avg_rating }}
                 {% endifnotequal %}
 
@@ -31,8 +32,8 @@
                 {% ifnotequal business.address "" %}
                 {{ business.address }}
                 {% endifnotequal %}
-
             </div>
+        </div>
         </a>
         </div>
         <hr/>

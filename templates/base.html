@@ -21,20 +21,6 @@
         }
     }
 
-    function show_accurate(business)
-    {
-        var post_data = {"business":business};
-
-        $.ajax({
-            url: {% url 'accurate' %},
-            type: "POST",
-            data: post_data,
-            success:function(data)
-            {
-                data = JSON.parse(data);
-            }
-        })
-    }
     </script>
 </head>
 <body>
