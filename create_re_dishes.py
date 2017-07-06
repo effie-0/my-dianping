@@ -1,6 +1,5 @@
-r_file = open('recommend_list.txt','r')
+r_file = open('popular_dishes.txt','r')
 w_file = open('recommend_dish.txt','w')
-test_file = open('test_dish.txt','w')
 
 line_count = 0
 shop_id = ''
@@ -11,6 +10,11 @@ for line in r_file:
 	dish = dish[1:]
 	length = len(id)
 	id = id[0:length - 1]
+
+	if len(dish) < 1:
+		print('skip')
+		continue
+		
 	if dish[0] == '(':
 		continue
 	if line_count == 0:
@@ -27,6 +31,5 @@ for line in r_file:
 			dish_list = []
 			dish_list.append(dish)
 			w_file.write('\n')
-			test_file.write(id + '*')
 	line_count += 1
 	print(line_count)

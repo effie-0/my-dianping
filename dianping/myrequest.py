@@ -25,7 +25,7 @@ def review_search(request):
     query_txt = request.POST.get('review')
     query_words = jieba.cut_for_search(query_txt)
     query = dictionary.doc2bow(query_words)
-    lsi = models.LsiModel(corpus, id2word=dictionary, num_topics=2)
+    lsi = models.LsiModel.load('review.lsi')
     query_lsi = lsi[query]
 
     sims = index[query_lsi]
@@ -79,7 +79,7 @@ def search_region(shop_list, region):
     result = Business.objects.none()
     for subregion in enum_list:
         temp_list = Business.objects.filter(region__contains = subregion)
-        result = Business.objectes.union(result, temp_list)
+        result = Business.objects.union(result, temp_list)
     return result
 
 
@@ -101,10 +101,11 @@ def multi_search(request):
 def accurate(request, id):
     my_id = str(id)
     #print(my_id)
-    businesses = Business.objects.filter(shop_id = my_id)
-    business = businesses[0]
+    business = Business.objects.get(shop_id = my_id)
+    reviews = business.business_review.all()
+    print(len(reviews))
     #print(business.name)
-    reviews = business_review(business)
+    #reviews = business_review(business)
     return render(request, 'show.html',{'business': business, 'reviews' : reviews, })
 
 def business_review(my_business):

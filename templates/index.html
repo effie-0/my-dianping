@@ -67,7 +67,7 @@
         <form method = "post" action = "{% url 'review_search'%}">
             {% csrf_token %}
             <div class = "form-group">
-                <label for = "review_search">
+                <label for = "review">
                     搜索评论内容
                 </label>
                 <input type = "text" id = "review" name = "review" class = "form-control" placeholder = "Review" required/>

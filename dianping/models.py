@@ -16,7 +16,7 @@ class Business(models.Model):
     service_grade = models.FloatField(default=0)
     avg_price = models.IntegerField(default=0)
     review_count = models.IntegerField(default=0)
-    popular_dishes = models.CharField(max_length=100,default='')
+    popular_dishes = models.CharField(max_length=1000,default='')
     sale_text = models.CharField(max_length=200,default='')
     recommend_text = models.CharField(max_length=200,default='')
     photo_url = models.CharField(max_length=200, default='')
@@ -36,12 +36,12 @@ class User(models.Model):
         return self.name
 
 class Review(models.Model):
-    business = models.ForeignKey('Business')
+    business = models.ForeignKey('Business', related_name='business_review')
     author = models.CharField(max_length=20, default='')
     author_id = models.CharField(max_length=15, default='')
     price = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
-    excertpt = models.CharField(max_length=50, default='')
+    excerpt = models.TextField(default='')
     content = models.TextField(default='')
     grade = models.FloatField(default=-1)
     review_id = models.CharField(max_length=15, default='')

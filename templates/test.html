@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+    <link href="carousel.css" rel="stylesheet">
+<script type = "text/javascript">
+    function show_subregions()
+    {
+        var radios = document.getElementsByName("region");
+        var length = radios.length;
+        for(var i = 0; i < length; i++)
+        {
+            if(radios[i].checked)
+            {
+                var myregion = radios[i].value;
+                var subregions = {{ subregions | safe }};
+                var div = document.getElementsByName("insertion");
+                var newdiv = document.createElement("div");
+                newdiv.name = "insertion_child";
+                var h3 = document.createElement("h3");
+                h3.innerHTML = "商圈";
+                var mylist = subregions[myregion];
+                for (var j = 0; j < mylist.length; j++)
+                {
+                    if(j == 0)
+                        newdiv.appendChild(h3);
+                    var subregion = mylist[j];
+                    var newlabel = document.createElement("label");
+                    var newradio = document.createElement("input");
+                    newradio.type = "radio";
+                    newradio.name = "subregion";
+                    newradio.value = subregion;
+                    newlabel.appendChild(newradio);
+                    newdiv.appendChild(newlabel);
+                    newlabel.innerHTML += subregion + "&nbsp;";
+                }
+
+                var childs = div[0].childNodes;
+                for(var k = childs.length - 1; k >= 0; k--)
+                {
+                    if(childs[k].name === "insertion_child")
+                    {
+                        div[0].removeChild(childs[k]);
+                        break;
+                    }
+                }
+                div[0].appendChild(newdiv);
+            }
+        }
+    }
+</script>
+    <h2>搜索美食店铺</h2>
+    <div>
+        <form method = "post" action = "{% url 'search' %}">
+            {% csrf_token %}
+            <div class = "form-group">
+                <select id = "search_method" name = "search_method">
+                    <option value = "1">店名</option>
+                    <option value = "2">推荐菜</option>
+                    <option value = "3">地址</option>
+                </select>
+                <input type = "text" id = "request_content" name = "request_content" class = "form-control" placeholder = "MyRequest" required/>
+            </div>
+            <button type = "submit" class = "btn btn-primary">搜索</button>
+        </form>
+    </div>
+    <hr/>
+    <h2>搜索评论</h2>
+    <div>
+        <form method = "post" action = "{% url 'review_search'%}">
+            {% csrf_token %}
+            <div class = "form-group">
+                <label for = "review_search">
+                    搜索评论内容
+                </label>
+                <input type = "text" id = "review" name = "review" class = "form-control" placeholder = "Review" required/>
+            </div>
+            <button type = "submit" class = "btn btn-primary">搜索</button>
+        </form>
+    </div>
+    <hr/>
+    <br/>
+    <h2>热门导航</h2>
+    <div>
+        <form method = "post" action = "{% url 'multi_search' %}">
+            {% csrf_token %}
+            <div class = "form-group">
+                <h3>美食分类</h3>
+                {% for dish_style in dish_styles %}
+                <label><input name = "dish_style" type = "radio" value = "{{ dish_style }}"/>{{ dish_style }}&nbsp;</label>
+                {% endfor %}
+            </div>
+            <div class = "form-group">
+                <h3>地区</h3>
+                {% for region in regions %}
+                <label><input name = "region" type = "radio" onclick = "show_subregions()"value = "{{ region }}"/>
+                    {{ region }}&nbsp;</label>
+                {% endfor %}
+            </div>
+            <div class = "form-group">
+                <div name = "insertion"></div>
+            </div>
+        <button type = "submit" class = "btn btn-primary">搜索</button>
+        </form>
+    </div>
+{% endblock %}

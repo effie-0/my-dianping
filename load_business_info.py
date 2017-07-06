@@ -8,13 +8,13 @@ count = 0
 for line in r_file:
 	list = line.split('\t')
 	print(count)
-	if len(list) < 18:
+	if len(list) < 13:
 		continue
 
 	name = list[0]
 	photo_url = list[1]
-	shop_id = list[2]
-	recommend_text = list[14]
+	shop_id = list[2][6:]
+	recommend_text = list[12]
 
 	if len(list[4]) > 0:
 		if list[4][-2] == 'r':
@@ -51,21 +51,10 @@ for line in r_file:
 
 	sale_text = list[3]
 	avg_rating = (product_grade + decoration_grade + service_grade)/ 3.0
-	telephone = list[17]
 
-	if len(list[15]) > 0:
-		latitude = float(list[15])
-	else:
-		latitude = -1
-
-	if len(list[16]) > 0:
-		longitude = float(list[16])
-	else:
-		longitude = -1
 	
 	#print(shop_id)
-	Business.objects.create(name = name, address = address, telephone = telephone, region = region,
-							category = category, latitude = latitude, longitude = longitude, avg_rating = avg_rating,
+	Business.objects.create(name = name, address = address, region = region, category = category, avg_rating = avg_rating,
 							product_grade = product_grade, decoration_grade = decoration_grade, service_grade = service_grade,
 							avg_price = avg_price, review_count = 0, sale_text = sale_text, recommend_text = recommend_text,
 							photo_url = photo_url, star = star, shop_id = shop_id)

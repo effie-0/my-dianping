@@ -62,4 +62,5 @@ def index(request):
                    '贵州菜', '素菜', '火锅', '海鲜', '小吃快餐', '日本菜', '韩国料理', '东南亚菜', '西餐', '自助餐', '面包甜点',
                    '全部']
 
-    return render(request, 'index.html', {'regions':regions, 'subregions':subregions, 'dish_styles':dish_styles})
+
+    return render(request, 'index0.html', {'regions':regions, 'subregions':subregions, 'dish_styles':dish_styles})
