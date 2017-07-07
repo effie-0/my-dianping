@@ -1,38 +1,40 @@
-import os, django
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "my_dianping.settings")
+import os
+os.environ['DJANGO_SETTINGS_MODULE'] = 'my_dianping.settings'
+import django
 django.setup()
 from dianping.models import Review, Business
-from django.utils import timezone
+from django.core.exceptions import ObjectDoesNotExist
 
 r_file = open('review.txt','r')
 count = 0
 for line in r_file:
 	list = line.split('\t')
+
 	if len(list) < 16 :
+		continue
+
+	shop_id_here = list[15][:-1]
+	try:
+		business = Business.objects.get(shop_id = shop_id_here)
+	except ObjectDoesNotExist:
+		print('drop out!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+		print(shop_id_here.isdigit())
+		print(list[15])
 		continue
 
 	print(count)
 	count += 1
 
-	shop_id_here = list[15]
-	shop_list = Business.objects.filter(shop_id = shop_id_here)
-	if len(shop_list) < 1:
-		continue
-		
-	business = shop_list[0]
 	author = list[1]
 
-	#if len(list[12]) > 0:
-	#	month, date = list[12].split('-')
-	#	created_at = datetime.date(2017, int(month), int(date))
-	#else:
-	#	created_at = timezone.now
+	content = list[14][1:]
 
-	content = list[14]
-	if len(list[14]) > 50:
-		excerpt = list[14]
+	if len(content) < 50:
+		excerpt = content
 	else:
-		excerpt = list[14][0:47] + '...'
+		excerpt = content[0:47] + '...'
+	print(excerpt)
+	#excerpt = ''
 
 	if len(list[6]) > 0:
 		grade = int(list[6][-2:])/10.0
