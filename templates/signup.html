@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'messages.html' %}
+<h3>注册</h3>
+<div>
+    <form method = "post" action = "{% url 'signupsubmit' %}">
+        {% csrf_token %}
+        <div class = "form-group">
+            <label for = "username">用户名</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="username" required/>
+        </div>
+        <div class = "form-group">
+            <label for = "telephone">电话号码</label>
+            <input type="text" id="telephone" name="telephone" class="form-control" placeholder="telephone" retuired/>
+        </div>
+        <div class = "form-group">
+            <label for = "password">密码</label>
+            <input type="text" id="password" name="password" class="form-control" placeholder="password" required/>
+        </div>
+        <button type = "submit" class = "btn btn-primary">注册</button>
+    </form>
+</div>
+{% endblock %}

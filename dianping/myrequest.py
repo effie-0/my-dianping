@@ -102,7 +102,7 @@ def accurate(request, id):
     my_id = str(id)
     #print(my_id)
     business = Business.objects.get(shop_id = my_id)
-    reviews = business.business_review.all()
+    reviews = Review.objects.filter(business__shop_id = my_id)
     print(len(reviews))
     #print(business.name)
     #reviews = business_review(business)

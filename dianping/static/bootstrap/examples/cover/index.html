@@ -41,30 +41,61 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">小众点评</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">登录</a></li>
+                  <li><a href="#">注册</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
+            <div class = "col-md-5">
+                  <div class="panel panel-default">
+                      <div class="panel-heading"> <strong class="">小众搜索</strong></div>
+                      <div class="panel-body">
+                          <form method="post" action="{% url 'search' %}">
+                              {% csrf_token %}
+                              <div class="form-group">
+                                  <div class="row">
+                                  <div class="input-group">
+                                      <div class="input-group-addon">
+                                          <select id = "search_method" name = "search_method" onchange="change_placeholder()">
+                                              <option value = "1" >店名</option>
+                                              <option value = "2" >推荐菜</option>
+                                              <option value = "3" >地址</option>
+                                          </select>
+                                      </div><!-- /btn-group -->
+                                      <input type="text" class="form-control" id = "request_content" name = "request_content" placeholder="店名" required/>
+                                      <span class="input-group-btn">
+                                          <button class="btn btn-default" type="submit">Go!</button>
+                                      </span>
+                                  </div><!-- /input-group -->
+                                  </div>
+                              </div>
+                          </form>
+                          <form method = "post" action = "{% url 'review_search'%}">
+                              {% csrf_token %}
+                              <div class="form-group">
+                                  <div class="row">
+                                  <div class="input-group">
+                                      <span class="input-group-addon">评论</span>
+                                      <input type="text" id="review" name="review" class="form-control" placeholder="评论" required/>
+                                      <span class="input-group-btn">
+                                          <button class="btn btn-default" type="submit">Go!</button>
+                                      </span>
+                                  </div><!-- /input-group -->
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                </div>
           </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
 
         </div>
 

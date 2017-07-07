@@ -1,4 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import auth
+#from .models import DianpingUser
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
@@ -64,3 +69,45 @@ def index(request):
 
 
     return render(request, 'index0.html', {'regions':regions, 'subregions':subregions, 'dish_styles':dish_styles})
+
+def login(request):
+    return render(request, 'login.html')
+
+def authenticate(request):
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    user = auth.authenticate(request, username=username, password=password)
+
+    if not user:
+        return redirect('login')
+
+    auth.login(request, user)
+    return redirect('index')
+
+def signup(request):
+    return render(request, 'signup.html')
+
+def signup_submit(request):
+    username = request.POST.get('username')
+    telephone = request.POST.get('telephone')
+    password = request.POST.get('password')
+
+    if len(DianpingUser.objects.filter(telephone = telephone)) != 0:
+        messages.info(request, '电话号码｛｝已经注册'.format(telephone))
+    else:
+        try:
+            print("trying")
+            user = User.objects.create_user(username = username, password = password)
+            #user.dianpinguser.telephone = telephone
+            print("what's wrong?")
+            return redirect('login')
+        except:
+            print("except orzzz")
+            return redirect('signup')
+
+
+@login_required
+def logout(request):
+    auth.logout(request)
+    return redirect('login')

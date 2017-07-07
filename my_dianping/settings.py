@@ -84,6 +84,7 @@ DATABASES = {
         'NAME': 'test',
         'USER': 'root',
         'PASSWORD': 'Haohaodushu',# the password of effie's mysql
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
 

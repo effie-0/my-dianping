@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.utils import timezone
 
 # Create your models here.
@@ -25,15 +28,24 @@ class Business(models.Model):
 
     def __str__(self):
         return self.name
-
-class User(models.Model):
-    name = models.CharField(max_length=20)
-    telephone = models.CharField(max_length=20)
-    password = models.CharField(max_length=20)  #?
-    browsed_list = models.ManyToManyField('Business')
+"""
+class DianpingUser(models.Model):
+    user = models.OneToOneField(User, related_name='dianpinguser')
+    telephone = models.CharField(max_length=35)
+    starred_list = models.ManyToManyField('Business')
 
     def __str__(self):
         return self.name
+
+@receiver(post_save, sender = User)
+def create_user_dianpinguser(sender, instance, created, **kwargs):
+    if created:
+        DianpingUser.objects.create(user = instance)
+
+@receiver(post_save, sender = User)
+def save_user_dianpinguser(sender, instance, **kwargs):
+    instance.dianping_user.save()
+"""
 
 class Review(models.Model):
     business = models.ForeignKey('Business', related_name='business_review')
@@ -46,6 +58,7 @@ class Review(models.Model):
     grade = models.FloatField(default=-1)
     review_id = models.CharField(max_length=15, default='')
     photo_url = models.CharField(max_length=200, default='')
+    #user = models.ForeignKey('DianpingUser', related_name='review_user', default=None)
 
     def __str__(self):
         return self.excertpt
@@ -58,14 +71,15 @@ class Review(models.Model):
     catagory = models.CharField(max_length=10)
     keyword = models.CharField(max_length=50)
     sort = models.IntegerField()
-    business = models.ForeignKey('Business')"""
+    business = models.ForeignKey('Business')
 
 class Message(models.Model):
-    sender = models.ForeignKey(User,related_name='sender')
-    receiver = models.ForeignKey(User, related_name='receiver')
+    sender = models.ForeignKey(DianpingUser,related_name='sender')
+    receiver = models.ForeignKey(DianpingUser, related_name='receiver')
     title = models.CharField(max_length=50)
     content = models.TextField()
     read = models.BooleanField()
-
+    
     def __str__(self):
         return self.title
+        """
