@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>小众点评</title>
 
@@ -29,24 +30,6 @@
 ================================================== -->
     <!-- end copy -->
 
-    <script type = "text/javascript">
-    function showmore(review)
-    {
-        var str = review.review_id;
-        var div = document.getElementsByName(str);
-        if(div[0].flag == 0)
-        {
-            div[0].innerHTML = review.content;
-            div[0].flag = 1;
-        }
-        else
-        {
-            div[0].innerHTML = review.excerpt;
-            div[0].flag = 0;
-        }
-    }
-
-    </script>
 </head>
 <body>
     <div class = "container">
@@ -59,7 +42,7 @@
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#">小众点评</a>
+                     <a class="navbar-brand" href="{% url 'index' %}">小众点评</a>
                  </div>
                  <div id="navbar" class="navbar-collapse collapse">
                  <ul class="nav navbar-nav navbar-right">
@@ -79,6 +62,11 @@
                  </div><!--/.nav-collapse -->
              </div>
          </nav>
+        <div class = "header clearfix">
+            <h3 class = "text-muted">
+                小众点评
+            </h3>
+        </div>
         <section id = "content">
             {% block content %}
             {% endblock %}

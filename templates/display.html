@@ -3,9 +3,12 @@
     {% for business in businesses %}
         <div>
         <a href = "{% url 'accurate' business.shop_id %}">
-        <div>
+        <div class = "row">
             {% ifnotequal business.photo_url "" %}
-            <img src = "{{ business.photo_url }}" width = 100 height = 100/>
+                <div class="col-md-4">
+                    <img src = "{{ business.photo_url }}" width = 100 height = 100/>
+                </div>
+                <div class="col-md-8">
             {% endifnotequal %}
 
             <h4>{{ business.name }}</h4>
@@ -16,11 +19,11 @@
 
                 {{ business.review_count }}条点评&nbsp;|&nbsp;
 
-                {% ifnotequal business.avg_price 0 %}
+                {% ifnotequal business.avg_price -1 %}
                 人均&nbsp;¥&nbsp;{{ business.avg_price }}
                 {% endifnotequal %}
             </h5>
-            <div>
+            <h5>
                 {% ifnotequal business.category ""%}
                 {{ business.category }}&nbsp;|&nbsp;
                 {% endifnotequal %}
@@ -32,7 +35,10 @@
                 {% ifnotequal business.address "" %}
                 {{ business.address }}
                 {% endifnotequal %}
+            </h5>
+        {% ifnotequal business.photo_url "" %}
             </div>
+        {% endifnotequal %}
         </div>
         </a>
         </div>

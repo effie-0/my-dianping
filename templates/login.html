@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% include 'messages.html' %}
 <h3>登录</h3>
     <div>
     <form method = "post" action = {% url 'authenticate' %}>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+    {% include 'messages.html' %}
+<h3>创建评论</h3>
+    <div>
+    <form method = "post" action = "{% url 'create' shop_id %}">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons submit=' 提交' %} {% endbuttons %}
+    </form>
+    </div>
+{% endblock %}

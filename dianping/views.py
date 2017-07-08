@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-#from .models import DianpingUser
-from django.contrib.auth.models import User
+from .models import Profile
+import django.contrib.auth.models
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -80,6 +80,10 @@ def authenticate(request):
     user = auth.authenticate(request, username=username, password=password)
 
     if not user:
+        if len(django.contrib.auth.models.User.objects.filter(username=username)) == 0:
+            messages.info(request, '用户{}未注册'.format(username))
+        else:
+            messages.info(request, '密码错误')
         return redirect('login')
 
     auth.login(request, user)
@@ -92,19 +96,18 @@ def signup_submit(request):
     username = request.POST.get('username')
     telephone = request.POST.get('telephone')
     password = request.POST.get('password')
+    if len(django.contrib.auth.models.User.objects.filter(username=username)) != 0:
+        messages.info(request, '用户{}已注册'.format(username))
 
-    if len(DianpingUser.objects.filter(telephone = telephone)) != 0:
-        messages.info(request, '电话号码｛｝已经注册'.format(telephone))
-    else:
-        try:
-            print("trying")
-            user = User.objects.create_user(username = username, password = password)
-            #user.dianpinguser.telephone = telephone
-            print("what's wrong?")
-            return redirect('login')
-        except:
-            print("except orzzz")
-            return redirect('signup')
+    try:
+        print("trying")
+        user = django.contrib.auth.models.User.objects.create_user(username = username, password = password)
+        Profile.objects.get(user = user).telephone = telephone
+        print("what's wrong?")
+        return redirect('login')
+    except:
+        print("except orzzz")
+        return redirect('signup')
 
 
 @login_required

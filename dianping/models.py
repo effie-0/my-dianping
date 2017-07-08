@@ -28,28 +28,28 @@ class Business(models.Model):
 
     def __str__(self):
         return self.name
-"""
-class DianpingUser(models.Model):
-    user = models.OneToOneField(User, related_name='dianpinguser')
-    telephone = models.CharField(max_length=35)
-    starred_list = models.ManyToManyField('Business')
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete = models.CASCADE, related_name='profile_user')
+    telephone = models.CharField(max_length=30, default="")
+    starred_list = models.ManyToManyField('Business', default=None)
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 @receiver(post_save, sender = User)
-def create_user_dianpinguser(sender, instance, created, **kwargs):
+def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        DianpingUser.objects.create(user = instance)
+        Profile.objects.create(user = instance)
 
 @receiver(post_save, sender = User)
-def save_user_dianpinguser(sender, instance, **kwargs):
-    instance.dianping_user.save()
-"""
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile_user.save()
+
 
 class Review(models.Model):
     business = models.ForeignKey('Business', related_name='business_review')
-    author = models.CharField(max_length=20, default='')
+    author = models.CharField(max_length=50, default='')
     author_id = models.CharField(max_length=15, default='')
     price = models.IntegerField(default=0)
     created_at = models.DateTimeField(default=timezone.now)
@@ -58,10 +58,11 @@ class Review(models.Model):
     grade = models.FloatField(default=-1)
     review_id = models.CharField(max_length=15, default='')
     photo_url = models.CharField(max_length=200, default='')
+    user = models.ForeignKey('auth.User', default=None)
     #user = models.ForeignKey('DianpingUser', related_name='review_user', default=None)
 
     def __str__(self):
-        return self.excertpt
+        return self.excerpt
 
 """class MyRequest(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=6)

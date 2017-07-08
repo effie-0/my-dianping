@@ -8,6 +8,10 @@ urlpatterns = [
     url(r'^review_search$', myrequest.review_search, name ='review_search'),
     url(r'^multi_search$', myrequest.multi_search, name = 'multi_search'),
     url(r'^accurate/(.*)/$', myrequest.accurate, name = 'accurate'),
+    url(r'^recommend$', myrequest.recommend, name = 'recommend'),
+    url(r'^create/(.*)/$', myrequest.create, name = 'create'),
+    url(r'^region/(.*)/$', myrequest.region_search, name = 'region'),
+    url(r'^dish/(.*)/$', myrequest.dish_search, name = 'dish'),
 
     url(r'^login$', views.login, name = 'login'),
     url(r'^authenticate$', views.authenticate, name = 'authenticate'),
