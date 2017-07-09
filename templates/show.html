@@ -21,7 +21,16 @@
         </div>
         <div class="col-md-7">
     {% endifnotequal %}
-    <h1>{{ business.name }}</h1>
+    <h1>
+        {{ business.name }}
+        <a href="{% url 'star' business.shop_id %}" class="btn btn-default" role=button>
+            {% ifequal starred 0 %}
+                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+            {% else %}
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            {% endifequal %}
+        </a>
+    </h1>
     <p>
         {% ifnotequal business.star 0 %}
             星级：{{ business.star }}&nbsp;&nbsp;

@@ -10,10 +10,12 @@
             {% endifnotequal %}
         <h4>
             {% ifnotequal review.business.name "" %}
-                店铺：{{ review.business.name }}<br/>
+                <a href="{% url 'accurate' review.business.shop_id %}">
+                    店铺：{{ review.business.name }}<br/>
+                </a>
             {% endifnotequal %}
 
-            {% ifnotequal review.business.author "" %}
+            {% ifnotequal review.author "" %}
                 用户名: {{ review.author }}<br/>
             {% endifnotequal %}
 

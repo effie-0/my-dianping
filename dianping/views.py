@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from .models import Profile, Review
+from .models import Profile, Review, Business
+from .myrequest import accurate
+from django.contrib.auth.models import User
 import django.contrib.auth.models
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -120,7 +122,7 @@ def logout(request):
 @login_required
 def home(request):
     reviews = Review.objects.filter(user = request.user)
-    profile = request.user.profile_user
+    profile = Profile.objects.get(user = request.user)
     telephone = profile.telephone
     businesses = profile.starred_list.all()
     return render(request, 'home.html', {'reviews': reviews, 'user': request.user, 'tel': telephone,
@@ -130,3 +132,45 @@ def home(request):
 def delete(request, review_id):
     Review.objects.get(id = review_id).delete()
     return home(request)
+
+@login_required
+def change(request, user_id):
+    user = User.objects.get(id = user_id)
+    tel = Profile.objects.get(user = user).telephone
+    return render(request, 'changeinfo.html', {'user': user, 'tel': tel})
+
+@login_required
+def changesubmit(request):
+    user_id = request.POST.get('userid')
+    user = User.objects.get(id = user_id)
+    profile = Profile.objects.get(user = user)
+    username = request.POST.get('username')
+    telephone = request.POST.get('telephone')
+    if username != user.username:
+        if len(django.contrib.auth.models.User.objects.filter(username=username)) != 0:
+            messages.info(request, '用户{}已注册'.format(username))
+        else:
+            user.username = username
+            user.save()
+
+    if telephone != profile.telephone:
+        if len(Profile.objects.filter(telephone=telephone)) != 0:
+            messages.info(request, '手机号{}已注册'.format(telephone))
+        else:
+            profile.telephone = telephone
+            profile.save()
+
+    return home(request)
+
+@login_required
+def changestar(request, shop_id):
+    profile = Profile.objects.get(user = request.user)
+    business = Business.objects.get(shop_id = shop_id)
+
+    try:
+        profile.starred_list.get(shop_id = shop_id)
+        profile.starred_list.remove(business)
+    except:
+        profile.starred_list.add(business)
+
+    return accurate(request, shop_id)

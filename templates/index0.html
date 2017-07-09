@@ -122,6 +122,20 @@
                                   </div>
                               </div>
                           </form>
+                          <form method = "post" action = "{% url 'review_keyword'%}">
+                              {% csrf_token %}
+                              <div class="form-group">
+                                  <div class="row">
+                                  <div class="input-group">
+                                      <span class="input-group-addon">评论关键字</span>
+                                      <input type="text" id="keyword" name="keyword" class="form-control" placeholder="关键字" required/>
+                                      <span class="input-group-btn">
+                                          <button class="btn btn-default" type="submit">Go!</button>
+                                      </span>
+                                  </div><!-- /input-group -->
+                                  </div>
+                              </div>
+                          </form>
                       </div>
                   </div>
               </div>

@@ -4,7 +4,10 @@
     <h1>{{ user.username }}</h1>
 </div>
     <div>
-    <h2>个人信息</h2>
+    <h2>
+        个人信息
+        <a href="{% url 'change' user.id %}" class="btn btn-default">更改个人信息</a>
+    </h2>
     <h3>
         用户名：{{ user.username }}<br/><br/>
         电话号码:{{ tel }}
@@ -27,7 +30,7 @@
                         {% endifnotequal %}
                         <h4>
                             {% ifnotequal review.business.name "" %}
-                                <a href="{% url 'accurate' business.shop_id %}">
+                                <a href="{% url 'accurate' review.business.shop_id %}">
                                     店铺：{{ review.business.name }}<br/>
                                 </a>
                             {% endifnotequal %}
@@ -52,7 +55,7 @@
             {% endfor %}
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-4 pull-right">
             <div class="text-muted">
                 <h3>我收藏的店铺</h3>
                 {% for business in businesses %}

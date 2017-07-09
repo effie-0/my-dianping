@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'messages.html' %}
+<h3>更改信息</h3>
+<div>
+    <form method = "post" action = "{% url 'changesubmit' %}">
+        {% csrf_token %}
+        <div class = "form-group">
+            <label for = "username">用户名</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="{{ user.username }}" value="{{ user.username }}"/>
+        </div>
+        <div class = "form-group">
+            <label for = "username">电话号码</label>
+            <input type="text" id="telephone" name="telephone" class="form-control" placeholder="{{ tel }}" value="{{ tel }}"/>
+        </div>
+        <div class = "form-group">
+            <input type="hidden" id="userid" name="userid" value="{{ user.id }}"/>
+        </div>
+        <button type = "submit" class = "btn btn-primary">更改</button>
+    </form>
+</div>
+{% endblock %}

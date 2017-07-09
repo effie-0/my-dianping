@@ -1,5 +1,5 @@
-from django.shortcuts import redirect, render
-from .models import Business, Review
+from django.shortcuts import render, get_object_or_404
+from .models import Business, Review, Profile
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm
 from django.contrib import messages
@@ -52,15 +52,12 @@ def review_search(request):
 
     return render(request, 'display_review.html', {'reviews':review_list, })
 
-"""
-
-def review_search(request):
-    content = request.POST.get('review')
+def review_search_key_word(request):
+    content = request.POST.get('keyword')
     review_list = Review.objects.filter(content__contains = content)
 
     return render(request, 'display_review.html', {'reviews':review_list, })
 
-"""
 def search_region(shop_list, region, dish_style):
     dic = { '朝阳区':['建外大街', '大望路', '朝外大街', '朝阳公园/团结湖', '左家庄',
                          '亮马桥/三元桥', '亚运村', '望京', '劲松/潘家园', '安贞', '芍药居',
@@ -137,13 +134,24 @@ def multi_search(request):
 
 def accurate(request, id):
     my_id = str(id)
-    #print(my_id)
-    business = Business.objects.get(shop_id = my_id)
+    business = None
+    try:
+        business = Business.objects.get(shop_id = my_id)
+    except:
+        messages.info(request, "店铺未找到")
     reviews = Review.objects.filter(business__shop_id = my_id).order_by('-created_at')
     print(len(reviews))
-    #print(business.name)
-    #reviews = business_review(business)
-    return render(request, 'show.html',{'business': business, 'reviews' : reviews, })
+    starred = 0
+
+    if request.user.is_authenticated():
+        profile = Profile.objects.get(user = request.user)
+        try:
+            profile.starred_list.get(shop_id = my_id)
+            starred = 1
+        except:
+            starred = 0
+
+    return render(request, 'show.html',{'business': business, 'reviews' : reviews, 'starred': starred})
 
 def business_review(my_business):
     reviews = Review.objects.filter(business = my_business)
