@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from .models import Profile
+from .models import Profile, Review
 import django.contrib.auth.models
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -116,3 +116,17 @@ def signup_submit(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+
+@login_required
+def home(request):
+    reviews = Review.objects.filter(user = request.user)
+    profile = request.user.profile_user
+    telephone = profile.telephone
+    businesses = profile.starred_list.all()
+    return render(request, 'home.html', {'reviews': reviews, 'user': request.user, 'tel': telephone,
+                                         'businesses': businesses })
+
+@login_required
+def delete(request, review_id):
+    Review.objects.get(id = review_id).delete()
+    return home(request)

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-header">
+    <h1>{{ user.username }}</h1>
+</div>
+    <div>
+    <h2>个人信息</h2>
+    <h3>
+        用户名：{{ user.username }}<br/><br/>
+        电话号码:{{ tel }}
+    </h3>
+        <hr/>
+    <div class="row">
+        <div class="col-md-7">
+            <h3>我的评论</h3>
+            {% for review in reviews %}
+                <div>
+                    <div class = "row">
+                    <a class="btn btn-default pull-right" href="{% url 'delete' review.id %}" role=button>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    </a>
+                        {% ifnotequal review.photo_url "" %}
+                            <div class = "col-md-4">
+                                <img src = "{{ review.photo_url }}" width = 100 height = 100/>
+                            </div>
+                            <div class = "col-md-8">
+                        {% endifnotequal %}
+                        <h4>
+                            {% ifnotequal review.business.name "" %}
+                                <a href="{% url 'accurate' business.shop_id %}">
+                                    店铺：{{ review.business.name }}<br/>
+                                </a>
+                            {% endifnotequal %}
+
+                            {% ifnotequal review.grade -1 %}
+                                评分：{{ review.grade }}<br/>
+                            {% endifnotequal %}
+
+                            {% ifnotequal review.price -1 %}
+                                人均价格：{{ review.price }}
+                            {% endifnotequal %}
+                        </h4>
+                        {% ifnotequal review.photo_url "" %}
+                            </div>
+                        {% endifnotequal %}
+                    </div>
+                    <div>
+                        {{ review.content }}<br/>
+                    </div>
+                </div>
+                <hr/>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-5">
+            <div class="text-muted">
+                <h3>我收藏的店铺</h3>
+                {% for business in businesses %}
+                    <a href="{% url 'accurate' business.shop_id %}">
+                        <h4><strong>{{ business.name }}</strong></h4>
+                    </a>
+                    <h5>
+                    {% ifnotequal business.category ""%}
+                    {{ business.category }}&nbsp;|&nbsp;
+                    {% endifnotequal %}
+
+                    {% ifnotequal business.region "" %}
+                    {{ business.region }}&nbsp;
+                    {% endifnotequal %}
+
+                    {% ifnotequal business.address "" %}
+                    {{ business.address }}
+                    {% endifnotequal %}
+                    </h5>
+                    <br/>
+                    <hr/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

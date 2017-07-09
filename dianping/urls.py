@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^accurate/(.*)/$', myrequest.accurate, name = 'accurate'),
     url(r'^recommend$', myrequest.recommend, name = 'recommend'),
     url(r'^create/(.*)/$', myrequest.create, name = 'create'),
+    url(r'^home$', views.home, name = 'home'),
+    url(r'^delete/(.*)/$', views.delete, name = 'delete'),
     url(r'^region/(.*)/$', myrequest.region_search, name = 'region'),
     url(r'^dish/(.*)/$', myrequest.dish_search, name = 'dish'),
 

@@ -2,6 +2,7 @@
 {% load bootstrap3 %}
 {% block content %}
     {% include 'messages.html' %}
+    <a class="btn btn-default pull-right" href="{% url 'accurate' shop_id %}" role=button>返回店铺</a>
 <h3>创建评论</h3>
     <div>
     <form method = "post" action = "{% url 'create' shop_id %}">

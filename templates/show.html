@@ -62,7 +62,7 @@
             {% csrf_token %}
             <input type = "hidden" id = "mydish" name = "mydish" value = "{{ business.category }}" />
             <input type = "hidden" id = "myregion" name = "myregion" value = "{{ business.region }}" />
-            <button type = "submit" class = "btn btn-primary">查看推荐餐厅</button>
+            <button type = "submit" class = "btn btn-default">查看推荐餐厅</button>
         </form>
     </h5>
         {% ifnotequal business.photo_url "" %}

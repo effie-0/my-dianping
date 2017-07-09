@@ -10,12 +10,12 @@ def search(request):
     request_type = request.POST.get("search_method")
     content = request.POST.get("request_content")
     if request.method == 'POST':
-	    if request_type == '1':
-	    	business_list = Business.objects.filter(name__contains = content).order_by('-avg_rating')
-	    elif request_type == '2':
-	    	business_list = Business.objects.filter(popular_dishes__contains = content).order_by('-avg_rating')
-	    else:
-	    	business_list = Business.objects.filter(address__contains = content).order_by('-avg_rating')
+        if request_type == '1':
+            business_list = Business.objects.filter(name__contains = content).order_by('-avg_rating')
+        elif request_type == '2':
+            business_list = Business.objects.filter(popular_dishes__contains = content).order_by('-avg_rating')
+        else:
+            business_list = Business.objects.filter(address__contains = content).order_by('-avg_rating')
 
     return render(request, 'display.html', {'businesses':business_list, })
 
@@ -25,6 +25,7 @@ def review_search(request):
     dictionary = corpora.Dictionary.load('review.dictionary')
     #corpus = corpora.MmCorpus('review.mm')
     lsi = models.LsiModel.load('review.lsi')
+    print(lsi.num_topics)
     index = similarities.Similarity.load('review.index')
 
     query_txt = request.POST.get('review')
@@ -195,4 +196,3 @@ def create(request, myshop_id):
         form = ReviewForm()
 
     return render(request, 'comment.html', {'form':form, 'shop_id':myshop_id})
-
