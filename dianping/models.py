@@ -51,14 +51,15 @@ class Review(models.Model):
     business = models.ForeignKey('Business', related_name='business_review')
     author = models.CharField(max_length=50, default='')
     author_id = models.CharField(max_length=15, default='')
-    price = models.IntegerField(default=0)
+    price = models.IntegerField(default=-1)
     created_at = models.DateTimeField(default=timezone.now)
     excerpt = models.TextField(default='')
     content = models.TextField(default='')
     grade = models.FloatField(default=-1)
     review_id = models.CharField(max_length=15, default='')
     photo_url = models.CharField(max_length=200, default='')
-    user = models.ForeignKey('auth.User', default=None)
+    user = models.ForeignKey('auth.User')
+    file_num = models.IntegerField(default = -1)
     #user = models.ForeignKey('DianpingUser', related_name='review_user', default=None)
 
     def __str__(self):

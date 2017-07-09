@@ -5,22 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff13d411-ed31-4034-a196-2d45c20da6a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dianping/forms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/comment.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.0" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.5" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.6" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.7" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.8" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.9" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/admin.py" afterPath="$PROJECT_DIR$/dianping/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/forms.py" afterPath="$PROJECT_DIR$/dianping/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/models.py" afterPath="$PROJECT_DIR$/dianping/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/myrequest.py" afterPath="$PROJECT_DIR$/dianping/myrequest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/urls.py" afterPath="$PROJECT_DIR$/dianping/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dianping/views.py" afterPath="$PROJECT_DIR$/dianping/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_dianping/settings.py" afterPath="$PROJECT_DIR$/my_dianping/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/display.html" afterPath="$PROJECT_DIR$/templates/display.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/display_review.html" afterPath="$PROJECT_DIR$/templates/display_review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index0.html" afterPath="$PROJECT_DIR$/templates/index0.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/show.html" afterPath="$PROJECT_DIR$/templates/show.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/signup.html" afterPath="$PROJECT_DIR$/templates/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/init_lsi.py" afterPath="$PROJECT_DIR$/init_lsi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/load_review.py" afterPath="$PROJECT_DIR$/load_review.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,20 +45,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="comment.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/comment.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_dianping/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="333">
               <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding />
             </state>
@@ -67,19 +58,31 @@
       <file leaf-file-name="show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1707">
+            <state relative-caret-position="30">
               <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
+            <state relative-caret-position="123">
               <caret line="14" column="14" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="14" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dianping/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +90,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dianping/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="104" column="62" lean-forward="false" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="62" />
+            <state relative-caret-position="-77">
+              <caret line="100" column="63" lean-forward="true" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -96,11 +99,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index0.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index0.html">
+      <file leaf-file-name="load_review.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/load_review.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="189" column="36" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="189" selection-end-column="36" />
+            <state relative-caret-position="74">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myrequest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dianping/myrequest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="init_lsi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/init_lsi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="40" column="83" lean-forward="false" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dianping/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,36 +144,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-867">
-              <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="display_review.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/display_review.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="display.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/display.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387">
-              <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -168,14 +171,12 @@
         <option value="$PROJECT_DIR$/dianping/load_location.py" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/create_re_dishes.py" />
-        <option value="$PROJECT_DIR$/init_lsi.py" />
         <option value="$PROJECT_DIR$/load_dishes.py" />
         <option value="$PROJECT_DIR$/load_location.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/messages.html" />
         <option value="$PROJECT_DIR$/forms.py" />
         <option value="$PROJECT_DIR$/load_business_info.py" />
-        <option value="$PROJECT_DIR$/load_review.py" />
         <option value="$PROJECT_DIR$/templates/display_review.html" />
         <option value="$PROJECT_DIR$/templates/display.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
@@ -183,14 +184,16 @@
         <option value="$PROJECT_DIR$/templates/index0.html" />
         <option value="$PROJECT_DIR$/templates/signup.html" />
         <option value="$PROJECT_DIR$/dianping/admin.py" />
-        <option value="$PROJECT_DIR$/dianping/forms.py" />
-        <option value="$PROJECT_DIR$/dianping/models.py" />
         <option value="$PROJECT_DIR$/my_dianping/settings.py" />
         <option value="$PROJECT_DIR$/dianping/urls.py" />
         <option value="$PROJECT_DIR$/templates/show.html" />
-        <option value="$PROJECT_DIR$/dianping/views.py" />
         <option value="$PROJECT_DIR$/templates/comment.html" />
+        <option value="$PROJECT_DIR$/dianping/forms.py" />
+        <option value="$PROJECT_DIR$/dianping/models.py" />
+        <option value="$PROJECT_DIR$/load_review.py" />
+        <option value="$PROJECT_DIR$/dianping/views.py" />
         <option value="$PROJECT_DIR$/dianping/myrequest.py" />
+        <option value="$PROJECT_DIR$/init_lsi.py" />
       </list>
     </option>
   </component>
@@ -221,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -233,37 +237,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_dianping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_dianping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_dianping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="my_dianping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dianping" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -275,6 +250,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -505,17 +483,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.403125" sideWeight="0.590625" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.403125" sideWeight="0.59765625" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.496875" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.403125" sideWeight="0.409375" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.403125" sideWeight="0.40234375" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -554,7 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,10 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1499521608000" expanded="true" signature="248:296" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="96" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,13 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
           <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/init_lsi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="40" column="63" lean-forward="false" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -773,19 +737,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/load_review.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="99" column="69" lean-forward="false" selection-start-line="96" selection-start-column="12" selection-end-line="99" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,40 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dianping/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dianping/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="46" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1499521608000" expanded="true" signature="248:296" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dianping/myrequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="180" column="0" lean-forward="true" selection-start-line="159" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -854,27 +773,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dianping/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="104" column="62" lean-forward="false" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_dianping/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
+        <state relative-caret-position="75">
           <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
           <folding />
         </state>
@@ -882,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/comment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="180">
           <caret line="12" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="14" />
           <folding />
         </state>
@@ -890,7 +791,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/display.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
+        <state relative-caret-position="60">
           <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="53" />
           <folding />
         </state>
@@ -906,7 +807,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="2835">
           <caret line="189" column="36" lean-forward="false" selection-start-line="182" selection-start-column="30" selection-end-line="189" selection-end-column="36" />
           <folding />
         </state>
@@ -922,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1707">
+        <state relative-caret-position="30">
           <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="33" />
           <folding />
         </state>
@@ -930,8 +831,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="123">
           <caret line="14" column="14" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dianping/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_dianping/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dianping/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_review.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dianping/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="100" column="63" lean-forward="true" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dianping/myrequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/init_lsi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="40" column="83" lean-forward="false" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
           <folding />
         </state>
       </provider>

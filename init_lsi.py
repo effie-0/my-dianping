@@ -34,9 +34,9 @@ corpus = [dictionary.doc2bow(text) for text in text_list]
 #print(corpus)
 #print(list(corpus))
 corpora.MmCorpus.serialize('review.mm', corpus)
-lsi_model = models.LsiModel(corpus,id2word=dictionary, num_topics = 400)
+lsi_model = models.LsiModel(corpus,id2word=dictionary, num_topics = 40)
 lsi_model.save('review.lsi')
 documents = lsi_model[corpus]
 print(documents)
-index = similarities.Similarity(documents, num_features = 50000)
+index = similarities.Similarity('./',documents, num_features = lsi_model.num_topics)
 index.save('review.index')

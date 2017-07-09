@@ -20,26 +20,37 @@ def search(request):
     return render(request, 'display.html', {'businesses':business_list, })
 
 
-"""
+
 def review_search(request):
-    dictionary = corpora.Dictionary.load('review.dict')
-    corpus = corpora.MmCorpus('review.mm')
+    dictionary = corpora.Dictionary.load('review.dictionary')
+    #corpus = corpora.MmCorpus('review.mm')
+    lsi = models.LsiModel.load('review.lsi')
     index = similarities.Similarity.load('review.index')
 
     query_txt = request.POST.get('review')
-    query_words = jieba.cut_for_search(query_txt)
+    query_string = ",".join(jieba.cut_for_search(query_txt))
+    query_words = query_string.split(",")
+    print(query_words)
     query = dictionary.doc2bow(query_words)
-    lsi = models.LsiModel.load('review.lsi')
+    print(query)
     query_lsi = lsi[query]
+    print(query_lsi)
 
     sims = index[query_lsi]
     result_list = sorted(enumerate(sims), key=lambda item: -item[1])
     result_list = result_list[0:20]
+    print(result_list)
     review_list = []
     for result in result_list:
-        review_list.append(Review.objects.get(id = int(result[0])))
+        try:
+            result_review = Review.objects.get(file_num=int(result[0]))
+        except:
+            continue
+
+        review_list.append(result_review)
 
     return render(request, 'display_review.html', {'reviews':review_list, })
+
 """
 
 def review_search(request):
@@ -48,7 +59,7 @@ def review_search(request):
 
     return render(request, 'display_review.html', {'reviews':review_list, })
 
-
+"""
 def search_region(shop_list, region, dish_style):
     dic = { '朝阳区':['建外大街', '大望路', '朝外大街', '朝阳公园/团结湖', '左家庄',
                          '亮马桥/三元桥', '亚运村', '望京', '劲松/潘家园', '安贞', '芍药居',
@@ -172,8 +183,15 @@ def create(request, myshop_id):
             review.excerpt = review.content[:50]
         else:
             review.excerpt = review.content
-        review.save()
-        messages.info(request, '评论《{}》创建成功'.format(review.excerpt))
+
+        if review.grade < 0 or review.grade > 5:
+            messages.info(request, '请输入0到5之间的分数')
+        elif review.price < 0:
+            messages.info(request, '请输入大于等于0的价格')
+        else:
+            review.save()
+            messages.info(request, '评论《{}》创建成功'.format(review.excerpt))
+
         form = ReviewForm()
 
     return render(request, 'comment.html', {'form':form, 'shop_id':myshop_id})

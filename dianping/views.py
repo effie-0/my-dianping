@@ -98,6 +98,8 @@ def signup_submit(request):
     password = request.POST.get('password')
     if len(django.contrib.auth.models.User.objects.filter(username=username)) != 0:
         messages.info(request, '用户{}已注册'.format(username))
+    if len(Profile.objects.filter(telephone = telephone)) != 0:
+        messages.info(request, '手机号{}已注册'.format(telephone))
 
     try:
         print("trying")
